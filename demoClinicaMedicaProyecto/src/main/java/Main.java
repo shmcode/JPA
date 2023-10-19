@@ -1,4 +1,5 @@
-import Seguridad.Usuario;
+import seguridad.Rol;
+import seguridad.Usuario;
 import service.IDAO;
 import service.ImplIDAO;
 
@@ -11,17 +12,20 @@ public class Main {
         //System.out.println(lista);
 
         Usuario u = new Usuario();
+        Rol rol = new Rol(1,"Enfermero/a");
 
 
         try {
-           u.setPrimerNombre("Shem");
-           u.setPrimerApellido("Perez");
-           u.setId("21011748");
-           dao.insert(u);
+            System.out.println("Se crea un USUARIO de ROL ENFERMERO/A");
+           u.setPrimer_NombreP("Juan");
+           u.setPrimer_ApellidoP("Hernandez");
+           u.setID_User("0410102031000N");
+           u.setEstado('A');
+           u.setID_Rol(rol);
+            dao.insert(rol);
+            dao.insert(u);
 
-           // Carrera carrera = new Carrera(1,"sistemas",u);
 
-            //dao.insert(carrera);
         }
         catch(Exception e) {
             System.out.println(e);
@@ -31,4 +35,5 @@ public class Main {
 
         System.out.println(lista);
     }
-}
+
+    }
